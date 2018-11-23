@@ -533,7 +533,7 @@ var app = new Vue({
         },
         // Convert all text that looks like links/email addresses to HTML links
         autolinker: function(string) {
-            return anchorme(string, {ips: false, files: false});
+            return anchorme(string, {truncate: [15,10], ips: false, files: false});
         },
         // Convert a date to a relative one if it is within -3 or +3 days from today
         humanizeDate: function(date) {
