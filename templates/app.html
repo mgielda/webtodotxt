@@ -26,6 +26,7 @@
                         <div><input type="text" v-model="filters.text" placeholder="{{ _('Text') }}"></div>
                         <div class="clear"><a href="#" title="{{ _('Clear this filter') }}" @click.prevent="filters.text = ''"><i class="fa fa-eraser"></i></a></div>
                     </div>
+                    {% if not config['HIDE_DATE_FILTERS'] %}
                     <div class="row">
                         <div><input type="text" placeholder="{{ _('Completion date') }}" readonly v-date-filter-datepicker:completion_date></div>
                         <div class="clear"><a href="#" title="{{ _('Clear this filter') }}" @click.prevent="filters.completion_date = ''"><i class="fa fa-eraser"></i></a></div>
@@ -38,6 +39,7 @@
                         <div><input type="text" placeholder="{{ _('Due date') }}" readonly v-date-filter-datepicker:due_date></div>
                         <div class="clear"><a href="#" title="{{ _('Clear this filter') }}" @click.prevent="filters.due_date = ''"><i class="fa fa-eraser"></i></a></div>
                     </div>
+                    {% endif %}
                 </div>
                 <div class="lists">
                     <h2>{{ _('Priorities') }} <button class="small" @click="filters.priorities = []" title="{{ _('Clear these filters') }}"><i class="fa fa-eraser"></i></button></h2>
